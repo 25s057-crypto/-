@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBO 직관 승률 분석기</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/" class="logo">KBO <span>FAN STATS</span></a>
+    <a href="#record-form" class="nav-btn">기록 추가</a>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <p class="eyebrow">MY BASEBALL DIARY</p>
+        <h1>나의 직관,<br><span>데이터로 기록하다.</span></h1>
+        <p class="hero-text">
+            내가 응원한 경기의 승률을 기록하고 분석해 보세요.
+        </p>
+        <a href="#record-form" class="primary-btn">직관 기록 추가하기 ↓</a>
+    </section>
+
+    <section class="stats">
+        <article class="stat-card">
+            <p>총 관람 경기</p>
+            <h2 id="total-games">0<span>경기</span></h2>
+        </article>
+        <article class="stat-card">
+            <p>승리</p>
+            <h2 id="total-wins">0<span>경기</span></h2>
+        </article>
+        <article class="stat-card">
+            <p>나의 승률</p>
+            <h2 id="win-rate">-</h2>
+        </article>
+    </section>
+
+    <section class="panel" id="record-form">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">NEW RECORD</p>
+                <h2>직관 기록 추가</h2>
+            </div>
+        </div>
+
+        <form id="game-form">
+            <div class="form-grid">
+                <label>
+                    경기 날짜
+                    <input type="date" id="game-date" required>
+                </label>
+
+                <label>
+                    구장
+                    <select id="stadium" required>
+                        <option value="">구장 선택</option>
+                        <option>잠실 야구장</option>
+                        <option>인천 SSG랜더스필드</option>
+                        <option>대전 한화생명 볼파크</option>
+                        <option>고척 스카이돔</option>
+                        <option>수원 KT위즈파크</option>
+                        <option>광주-기아 챔피언스 필드</option>
+                        <option>대구 삼성라이온즈파크</option>
+                        <option>사직 야구장</option>
+                        <option>창원 NC파크</option>
+                        <option>포항 야구장</option>
+                        <option>울산 문수야구장</option>
+                    </select>
+                </label>
+
+                <label>
+                    응원팀
+                    <select id="team" required>
+                        <option value="">응원팀 선택</option>
+                        <option>KIA 타이거즈</option>
+                        <option>삼성 라이온즈</option>
+                        <option>LG 트윈스</option>
+                        <option>두산 베어스</option>
+                        <option>KT 위즈</option>
+                        <option>SSG 랜더스</option>
+                        <option>롯데 자이언츠</option>
+                        <option>한화 이글스</option>
+                        <option>NC 다이노스</option>
+                        <option>키움 히어로즈</option>
+                    </select>
+                </label>
+
+                <label>
+                    상대팀
+                    <select id="opponent" required>
+                        <option value="">상대팀 선택</option>
+                        <option>KIA 타이거즈</option>
+                        <option>삼성 라이온즈</option>
+                        <option>LG 트윈스</option>
+                        <option>두산 베어스</option>
+                        <option>KT 위즈</option>
+                        <option>SSG 랜더스</option>
+                        <option>롯데 자이언츠</option>
+                        <option>한화 이글스</option>
+                        <option>NC 다이노스</option>
+                        <option>키움 히어로즈</option>
+                    </select>
+                </label>
+
+                <label>
+                    응원팀 점수
+                    <input type="number" id="my-score" min="0"
+                           step="1" required placeholder="예: 5">
+                </label>
+
+                <label>
+                    상대팀 점수
+                    <input type="number" id="opponent-score" min="0"
+                           step="1" required placeholder="예: 3">
+                </label>
+            </div>
+
+            <button type="submit" class="primary-btn submit-btn">
+                경기 기록 저장
+            </button>
+            <p id="form-message" role="status"></p>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">GAME HISTORY</p>
+                <h2>나의 직관 기록</h2>
+            </div>
+        </div>
+
+        <div id="game-list" class="game-list">
+            <p class="empty">아직 등록된 직관 기록이 없습니다.</p>
+        </div>
+    </section>
+
+    <footer>
+        KBO FAN STATS · MY BASEBALL DIARY
+    </footer>
+
+</main>
+
+</body>
+</html>
